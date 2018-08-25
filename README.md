@@ -5,5 +5,7 @@ Python implementations of the following active learning algorithms:
 
 * Random Sampling
 * Uncertainty Sampling
-  *Least Confident
+  * Least Confident
+  * Margin Sampling
+  * Entropy Sampling
 
