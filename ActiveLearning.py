@@ -183,10 +183,10 @@ class AL(object):
     
     def initialization(self,strategy='exploration'):
         """
-        Select the intial samples in the ctive learning process
+        Select the intial samples in the active learning process
         Parameters
          ----------
-         n_cv : String
+         strategy : String
              The strategy to select the initial samples.
         """
         
@@ -296,8 +296,6 @@ class AL(object):
             selected_index = self.Query_by_Diversity(dist,beta)
             
         elif(strategy=='QuerybyRandom'):
-            
-            print('hhhhhhhhhhhh')
             
             selected_index = self.QuerybyRandom()
             
@@ -719,7 +717,7 @@ class AL(object):
  
     def SingleView_train(self,n_cv,view):
         """
-        Train each classifier among his coresspondent view
+        Train each classifier among unique view
         """ 
         self.tune_parameters(n_cv)
         classifiers = []
@@ -791,8 +789,7 @@ class AL(object):
         votes = votes.astype(int)
         preds = np.array([])
         
-        if(strategy=='majority'):
-            
+        if(strategy=='majority')
             
             preds = np.apply_along_axis(np.argmax,0,np.apply_along_axis(np.bincount, 0, votes).astype(int))
             
@@ -899,7 +896,7 @@ class AL(object):
             print(self.y_unlabeled[ind])
             print()
             print()
-            l = input('Please, provide the label of the following abstract')
+            l = input('Please, provide the label of the following document')
             labels = np.append(labels,int(l))
             sys.stdout.flush()
             os.system('clear')
@@ -910,7 +907,7 @@ class AL(object):
     def QueryStrategy(self,vote_entropy,proba,mode,contention_points_index,n):
         """
         Selects the best fit of samples according to a certain 
-        strategy among hte contention points.
+        strategy among the contention points.
         Parameters
         ----------
         vote_entropy : array-like of integer, shape==(n_samples, n_students)
