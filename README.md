@@ -10,8 +10,8 @@ Python implementations of the following active learning algorithms:
   * Entropy Sampling
 * Diversity Sampling
 * Weighted Uncertainty Sampling
- * Density based
- * Diversity based
+  * Density based
+  * Diversity based
 * Expected Model Change
 * Weighted Expected Model Change
 * Expected Error Reduction
